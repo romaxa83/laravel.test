@@ -73,6 +73,9 @@
         </nav>
 
         <main class="py-4">
+            @section('breadcrumbs')
+                {!! Breadcrumbs::render() !!}
+            @show
             @yield('content')
         </main>
     </div>
