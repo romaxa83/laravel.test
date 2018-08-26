@@ -21,3 +21,8 @@ Breadcrumbs::register('cabinet',function (BreadcrumbsGenerator $crumb){
     $crumb->parent('home');
     $crumb->push('Cabinet',route('cabinet'));
 });
+
+Breadcrumbs::register('admin.home',function (BreadcrumbsGenerator $crumb){
+    $crumb->parent('home');
+    $crumb->push('Admin',route('admin.home'));
+});
