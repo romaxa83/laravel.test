@@ -33,5 +33,6 @@ Route::group([
     'middleware' => ['auth'],
 ],function(){
     Route::get('/', 'DashboardController@index')->name('home');
+    Route::resource('/category', 'CategoryController');
     Route::resource('users', 'UsersController');  //генерирует все пути для crud
 });

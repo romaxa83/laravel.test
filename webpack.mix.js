@@ -33,11 +33,13 @@ mix.scripts([
     'resources/assets/admin/plugins/datatables/jquery.dataTables.min.js',
     'resources/assets/admin/plugins/datatables/dataTables.bootstrap.min.js',
     'resources/assets/admin/dist/js/app.min.js',
-    'resources/assets/dist/js/demo.js'
+    'resources/assets/admin/dist/js/demo.js',
+    'resources/assets/admin/dist/js/script.js'
 ],'public/js/admin.js');
 
 mix.copy('resources/assets/admin/bootstrap/fonts','public/fonts');
 mix.copy('resources/assets/admin/dist/fonts','public/fonts');
+mix.copy('resources/assets/admin/dist/img','public/img');
 //
 // mix
 //     .setPublicPath('public/build')
