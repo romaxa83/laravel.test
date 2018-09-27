@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Category;
 
 class CategoryController extends Controller
 {
@@ -40,16 +40,29 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('admin.category.edit',[
+            'category' => $category
+        ]);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required'
+        ]);
+        $category = Category::find($id);
+
+        $category->update($request->all());
+
+        return redirect()->route('admin.category.index');
     }
 
     public function destroy($id)
     {
-        //
+        Category::find($id)->delete();
+
+        return redirect()->route('admin.category.index');
     }
 }

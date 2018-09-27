@@ -43,10 +43,16 @@
                             <tr>
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->title }}</td>
-                                <td><a href="edit.html" class="fa fa-pencil"></a> <a href="#" class="fa fa-remove"></a></td>
+                                <td><a href="{{ route('admin.category.edit',$category->id) }}" class="fa fa-pencil"></a>
+                                    {{ Form::open(['route' => ['admin.category.destroy',$category->id],'method' => 'delete']) }}
+                                    <button onclick="return confirm('Вы уверены?')" class="delete" type="submit">
+                                        <i class="fa fa-remove"></i>
+                                    </button>
+                                    {{ Form::close() }}
+                                </td>
                             </tr>
                         @endforeach
-                        </tfoot>
+                        </tbody>
                     </table>
                 </div>
                 <!-- /.box-body -->
